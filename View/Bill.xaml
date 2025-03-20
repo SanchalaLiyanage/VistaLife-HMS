@@ -1,0 +1,298 @@
+﻿<Window x:Class="VistaLife.View.Bill"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VistaLife.View"
+        mc:Ignorable="d"
+           Title="ViewPatient" Height="750" Width="1550"
+    WindowStyle="None"
+    ResizeMode="NoResize"
+    WindowStartupLocation="CenterScreen"
+    Background="Transparent"
+    AllowsTransparency="True"
+    MouseDown="Window_MouseDown"
+ >
+    <Border CornerRadius="12">
+        <Border.Background>
+            <ImageBrush ImageSource="/Images/tec.jpg"
+                 Stretch="None"/>
+        </Border.Background>
+
+        <Border CornerRadius="10"
+     BorderThickness="4"
+         Opacity="0.95">
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1" >
+                    <GradientStop Color="#0F1035" Offset="0"/>
+                    <GradientStop Color="#003366" Offset="0.75"/>
+                    <GradientStop Color="#0a9396" Offset="0.25"/>
+                    <GradientStop Color="#DCF2F1" Offset="0.50"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                    <GradientStop Color="#1b4965" Offset="0"/>
+                    <GradientStop Color="#034078" Offset="0.75"/>
+                    <GradientStop Color="#001f54" Offset="1"/>
+                    <GradientStop Color="#0a1128" Offset="0"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid>
+                <Grid.RowDefinitions >
+                    <RowDefinition Height="30">
+                    </RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="5"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Text="BILL"
+                        Foreground="DarkGray"
+                        FontSize="10"
+                        FontFamily="Montserrat"
+                        Grid.Column="0"
+                        VerticalAlignment="Center"
+                        Margin="10,0,0,0"/>
+
+                    <Button x:Name="btnMinimize"
+                            
+                            BorderThickness="0"
+                            Content="-"
+                            Foreground="Black"
+                            FontSize="16"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"
+                            
+                            Click="btnMinimize_Click" Grid.Column="1">
+
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#0a9396"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#1b4965"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="18" Height="18"
+                                    CornerRadius="9"
+                                    Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                    <Button x:Name="btnMaximize"
+                            BorderThickness="0"
+                            Content="□"
+                            Foreground="Black"
+                            FontSize="16"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"
+                            Click="btnMaximize_Click" Grid.Column="2" Height="30" VerticalAlignment="Top">
+
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#0a9396"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#1b4965"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="18" Height="18"
+                                     CornerRadius="9"
+                                     Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                      HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+
+                    <Button x:Name="btnClose"
+   
+                           BorderThickness="0"
+                           Content="X"
+                           Foreground="Black"
+                           FontSize="12"
+                           FontFamily="Montserrat"
+                           Cursor="Hand"
+                           Grid.Column="3"
+                           Click="btnClose_Click">
+
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#0a9396"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="red"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="18" Height="18"
+                                        CornerRadius="9"
+                                        Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                     HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+
+                    </Button>
+                </Grid>
+                <StackPanel x:Name="loginStackPanel"
+                     Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="271,20,271,-100"
+                     >
+                    <Image  Source="/Images/logo_edited.jpg" Stretch="Fill" Height="51" Width="80" RenderTransformOrigin="0.83,1.247"/>
+                    <TextBlock Text=" VISTALIFE HOSPITAL"
+             Foreground="LightGray"
+             FontSize="18"
+             FontWeight="Medium"
+             FontFamily="Montserrat"
+             TextWrapping="Wrap"
+             />
+
+                    <StackPanel Orientation="Horizontal"
+                         HorizontalAlignment="Center"/>
+
+
+                </StackPanel>
+
+
+                <Grid Width="1500" Margin="46,98,36,-702">
+                    <TextBox x:Name="txtPName" HorizontalAlignment="Left" Height="23" Margin="674,27,0,0"  VerticalAlignment="Top" Width="347" Background="White"/>
+
+
+                    <Label x:Name="lbl_PID" Content="Patient ID" HorizontalAlignment="Left" Margin="383,22,0,0" VerticalAlignment="Top" FontSize="18" Width="170" Foreground="White" RenderTransformOrigin="0.138,0.683"/>
+                    <Label x:Name="lbl_ExtraServises" Content="Extra Services" HorizontalAlignment="Left" Margin="385,126,0,0" VerticalAlignment="Top" FontSize="18" Width="169" Foreground="White" RenderTransformOrigin="0.138,0.683"/>
+                    <Label x:Name="TotaleBill" Content="Total Bill" HorizontalAlignment="Left" Margin="383,555,0,0" VerticalAlignment="Top" FontSize="18" Width="169" Foreground="White" RenderTransformOrigin="0.138,0.683"/>
+                    <Label x:Name="TotBillShow" Content="" HorizontalAlignment="Left" Margin="658,535,0,0" VerticalAlignment="Top" FontSize="24" Width="378" Foreground="White" RenderTransformOrigin="0.138,0.683" Height="74" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Medium">
+                        <Label.Background>
+                            <SolidColorBrush Color="#FFA16249" Opacity="0.3"/>
+                        </Label.Background>
+                    </Label>
+
+
+
+                    <CheckBox x:Name="chek_blood" Content="Blood Report" FontSize="18" Foreground="White" RenderTransformOrigin="0.138,0.683" Margin="706,143,582,457"/>
+                    <CheckBox x:Name="chek_Xray" Content="X-ray" FontSize="18" Foreground="White" RenderTransformOrigin="0.138,0.683" Margin="706,186,582,414"/>
+                    <CheckBox x:Name="chek_CTscan" Content="CT-Scan" FontSize="18" Foreground="White" RenderTransformOrigin="0.138,0.683" Margin="946,143,342,457"/>
+                    <CheckBox x:Name="chek_ECG" Content="ECG Report" FontSize="18" Foreground="White" RenderTransformOrigin="0.138,0.683" Margin="946,187,342,413"/>
+                    <CheckBox x:Name="chek_MRIscan" Content="MRI-Scan" FontSize="18" Foreground="White" RenderTransformOrigin="0.138,0.683" Margin="706,230,582,374"/>
+                    <CheckBox x:Name="chek_EEG" Content="EEG" FontSize="18" Foreground="White" RenderTransformOrigin="0.138,0.683" Margin="946,277,342,327"/>
+                    <CheckBox x:Name="chek_Eco" Content="Eco Test" FontSize="18" Foreground="White" RenderTransformOrigin="0.138,0.683" Margin="706,274,582,330"/>
+                    <CheckBox x:Name="chek_Endoscopy" Content="Endoscopy Test" FontSize="18" Foreground="White" RenderTransformOrigin="0.138,0.683" Margin="946,230,342,374"/>
+
+
+                    <Button x:Name="btnCalculate" Content="Calculate" Style="{StaticResource RoundedButtonStyle}" Width="100" Height="30" Margin="1361,552,39,52" Background="#0e1047"  BorderThickness="2" BorderBrush="White" Foreground="White" FontSize="12" FontFamily="Montserrat" Cursor="Hand" Click="btnCalculate_Click"></Button>
+                    <Button x:Name="btnClear" Content="Clear" Style="{StaticResource RoundedButtonStyle}" Width="100" Height="30" Margin="1177,552,223,52" Background="#0e1047"  BorderThickness="2" BorderBrush="White" Foreground="White" FontSize="12" FontFamily="Montserrat" Cursor="Hand" Click="btnClear_Click"></Button>
+
+
+
+
+
+                </Grid>
+
+                <Grid x:Name="Grid_Menu" Width="204" HorizontalAlignment="Left" Margin="0,30,0,-712" Background="#FF91B5D4">
+                    <Grid.RowDefinitions >
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+
+                    </Grid.RowDefinitions>
+                    <Button x:Name="back" Style="{StaticResource RoundedButtonStyle}"  Grid.Row="0" Margin="74,10,0,31" RenderTransformOrigin="0.276,0.447" HorizontalAlignment="Left" Width="52" BorderBrush="#FF91B5D4" Click="back_Click">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/View/back-button.png" Stretch="Uniform"/>
+                        </Button.Background>
+
+                    </Button>
+                    <Button x:Name="btnAddpatient" Grid.Row="1" Margin="65,10,65,50" Style="{StaticResource RoundedButtonStyle}" BorderBrush="#FF91B5D4" Click="btnAddpatient_Click">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/View/hospitalisation.png" Stretch="Uniform"/>
+                        </Button.Background>
+                    </Button>
+                    <Button x:Name="BtnStaffDetails" Grid.Row="4" Margin="71,26,75,39" Style="{StaticResource RoundedButtonStyle}" RenderTransformOrigin="0.669,0.857" BorderBrush="#FF91B5D4" Click="BtnStaffDetails_Click">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/View/nurse (1).png"/>
+                        </Button.Background>
+                    </Button>
+                    <Button x:Name="BtnPDetails" Grid.Row="3" Margin="0,31,0,0" Height="39" Style="{StaticResource RoundedButtonStyle}" VerticalAlignment="Top" HorizontalAlignment="Center" Width="62" BorderBrush="#FF91B5D4" Click="BtnPDetails_Click">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/View/file.png" Stretch="Uniform"/>
+                        </Button.Background>
+                    </Button>
+                    <Button x:Name="btnChannel" Grid.Row="2" Margin="50,15,50,44" Style="{StaticResource RoundedButtonStyle}" BorderBrush="#FF91B5D4" Click="btnChannel_Click">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/View/medical.png" Stretch="Uniform"/>
+                        </Button.Background>
+                    </Button>
+                    <Button x:Name="btnLogout" Grid.Row="5" Margin="39,0,39,0" Style="{StaticResource RoundedButtonStyle}" RenderTransformOrigin="0.562,0.867" Height="50" VerticalAlignment="Center" BorderBrush="#FF91B5D4" Click="btnLogout_Click">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/View/logout.png" Stretch="Uniform"/>
+                        </Button.Background>
+                        <Label x:Name="lbl_LogOut" Content="Log Out" FontSize="22" Foreground="Black" Margin="0,41,0,-40" Background="{x:Null}" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Width="174" RenderTransformOrigin="0.418,0.378"/>
+                    </Button>
+                    <Label x:Name="lbl_Addmit" Content="Admit Patient"  VerticalAlignment="Bottom" FontSize="18" Foreground="Black" Margin="6,0,0,1" Height="34" Background="{x:Null}" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Width="184" Grid.Row="1"/>
+                    <Label x:Name="lbl_Channel" Content="Channel Doctor"  VerticalAlignment="Bottom" FontSize="18" Foreground="Black" Margin="10,0,0,5" Height="34" Background="{x:Null}" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Width="184" Grid.Row="2"/>
+                    <Label x:Name="lbl_ViewPatient" Content="View patient's Details"  VerticalAlignment="Bottom" FontSize="18" Foreground="Black" Margin="6,0,0,118" Height="44" Background="{x:Null}" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Width="184" Grid.Row="3" Grid.RowSpan="2" BorderBrush="#FF91B5D4"/>
+                    <Label x:Name="lbl_ViewStaff" Content="View Staff Details"  VerticalAlignment="Bottom" FontSize="18" Foreground="Black" Margin="15,0,0,5" Height="34" Background="{x:Null}" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Width="184" Grid.Row="4"/>
+                </Grid>
+
+                <Label x:Name="lbl_Addmit_Copy" Content="Back&#xD;&#xA;Back"  VerticalAlignment="Bottom" FontSize="18" Foreground="Black" Margin="10,0,0,-115" Height="34" Background="{x:Null}" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Width="184" RenderTransformOrigin="0.504,0.776"/>
+
+
+
+                <Grid/>
+                <Label x:Name="lbldate" Content="Number of Addmitted Date" HorizontalAlignment="Left" Margin="426,452,0,-460" FontSize="18" Width="246" Foreground="White" RenderTransformOrigin="0.138,0.683"/>
+                <Calendar/>
+                <TextBox x:Name="txtdisDate" HorizontalAlignment="Left" Margin="720,452,0,-445" Width="347" Background="White"/>
+                <Label x:Name="lbl_Ptype" Content="Patient Type" HorizontalAlignment="Left" Margin="426,174,0,-178" FontSize="18" Width="170" Foreground="White" RenderTransformOrigin="0.138,0.683"/>
+                <ComboBox x:Name="combobox_type" HorizontalAlignment="Left" Margin="720,180,0,-172" Width="347" Background="White">
+                    <ComboBoxItem Content="In Patient" />
+                    <ComboBoxItem Content="Out Patient"/>
+                </ComboBox>
+                <Label x:Name="lbl_Ptype_Copy" Content="Patient Type" HorizontalAlignment="Left" Margin="426,550,0,-554" FontSize="18" Width="170" Foreground="White" RenderTransformOrigin="0.138,0.683"/>
+                <ComboBox x:Name="comboP_Type" HorizontalAlignment="Left" Margin="720,550,0,-542" Width="347" Background="White">
+                    <ComboBoxItem Content="Cash" />
+                    <ComboBoxItem Content="Card"/>
+                    <ComboBoxItem Content="Cheque"/>
+                    <ComboBoxItem Content="Online"/>
+                    <ComboBoxItem Content="Insurance"/>
+                    <ComboBoxItem Content="Other"/>
+                </ComboBox>
+                <Button x:Name="btnPay" Content="Pay" Style="{StaticResource RoundedButtonStyle}" Margin="1291,277,112,-385" Background="#0e1047"  BorderThickness="2" BorderBrush="White" Foreground="White" FontSize="36" FontFamily="Montserrat" Cursor="Hand" Click="btnPayClick"/>
+
+
+
+            </Grid>
+
+        </Border>
+    </Border>
+</Window>

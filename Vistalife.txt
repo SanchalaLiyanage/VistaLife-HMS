@@ -1,0 +1,43 @@
+<Window x:Class="VistaLife.View.LoginView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VistaLife.View"
+        mc:Ignorable="d"
+        Title="LoginView" Height="550" Width="800"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Background="Transparent"
+        AllowsTransparency="True">
+
+    <Border CornerRadius="50">
+        <Border.Background>
+            <ImageBrush ImageSource="/Images/tec.jpg"
+                        Stretch="None"/>
+        </Border.Background>
+
+        <Border CornerRadius="50"
+            BorderThickness="5"
+                Opacity="0.95">
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1" >
+                    <GradientStop Color="#0F1035" Offset="0"/>
+                    <GradientStop Color="#003366" Offset="0.75"/>
+                    <GradientStop Color="#0a9396" Offset="0.25"/>
+                    <GradientStop Color="#DCF2F1" Offset="0.50"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                    <GradientStop Color="#1b4965" Offset="0"/>
+                    <GradientStop Color="#034078" Offset="0.75"/>
+                    <GradientStop Color="#001f54" Offset="1"/>
+                    <GradientStop Color="#0a1128" Offset="0"/>
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+    </Border>
+</Window>

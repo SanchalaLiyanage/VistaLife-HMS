@@ -1,0 +1,17 @@
+﻿<Application x:Class="VistaLife.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:VistaLife"
+             StartupUri="View/Welcome.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                
+                <ResourceDictionary Source="Resource/ButtonStyle.xaml"/>
+                <ResourceDictionary Source="Resource/TextBoxStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+   
+
+    </Application.Resources>
+</Application>

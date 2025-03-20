@@ -1,0 +1,61 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\logo_edited.jpg" />
+    <None Remove="Images\tec.jpg" />
+    <None Remove="Images\user.png" />
+    <None Remove="Images\WelcmBG.jpg" />
+    <None Remove="View\12.jpg" />
+    <None Remove="View\back-button.png" />
+    <None Remove="View\doctor %282%29.png" />
+    <None Remove="View\file.png" />
+    <None Remove="View\hospitalisation.png" />
+    <None Remove="View\icons8-username-50.png" />
+    <None Remove="View\images.jpeg" />
+    <None Remove="View\logout.png" />
+    <None Remove="View\logo_edited.jpg" />
+    <None Remove="View\medical.png" />
+    <None Remove="View\nurse %281%29.png" />
+    <None Remove="View\temp5.jpg" />
+    <None Remove="View\user-icon-male-.jpg" />
+    <None Remove="View\WelcmBG.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Model\" />
+    <Folder Include="ViewModel\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\logo_edited.jpg" />
+    <Resource Include="Images\tec.jpg" />
+    <Resource Include="Images\user.png" />
+    <Resource Include="Images\WelcmBG.jpg" />
+    <Resource Include="View\12.jpg" />
+    <Resource Include="View\back-button.png" />
+    <Resource Include="View\doctor (2).png" />
+    <Resource Include="View\file.png" />
+    <Resource Include="View\hospitalisation.png" />
+    <Resource Include="View\icons8-username-50.png" />
+    <Resource Include="View\images.jpeg" />
+    <Resource Include="View\logout.png" />
+    <Resource Include="View\logo_edited.jpg" />
+    <Resource Include="View\medical.png" />
+    <Resource Include="View\nurse (1).png" />
+    <Resource Include="View\temp5.jpg" />
+    <Resource Include="View\user-icon-male-.jpg" />
+    <Resource Include="View\WelcmBG.jpg" />
+  </ItemGroup>
+
+</Project>

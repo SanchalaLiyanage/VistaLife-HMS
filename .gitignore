@@ -1,0 +1,43 @@
+# Ignore Visual Studio user-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Ignore build and output folders
+bin/
+obj/
+Debug/
+Release/
+*.vspscc
+*.vssscc
+
+# Ignore NuGet packages
+*.nupkg
+**/packages/*
+
+# Ignore Visual Studio Code settings
+.vscode/
+
+# Ignore Rider project settings
+.idea/
+
+# Ignore logs and generated files
+*.log
+*.tlog
+
+# Ignore Publish-related files
+*.publishsettings
+*.pubxml
+*.pubxml.user
+
+# Ignore Resharper files
+_ReSharper*/
+
+# Ignore dotnet tool artifacts
+**/.vs
+**/.DS_Store
+
+# Ignore auto-generated files by Windows
+Thumbs.db
+Desktop.ini
